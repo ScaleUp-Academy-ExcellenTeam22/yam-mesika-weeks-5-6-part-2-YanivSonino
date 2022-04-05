@@ -19,7 +19,8 @@ def check_for_perfection(number_to_check):
 
 
 num = 1
-while 1:
+
+while 1:  # check for all numbers
     is_perfect = check_for_perfection(num)
     if is_perfect == num:
         print(is_perfect)
