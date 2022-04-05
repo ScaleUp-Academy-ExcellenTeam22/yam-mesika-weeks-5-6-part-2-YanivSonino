@@ -9,12 +9,12 @@ def average_runtime(structure):
     return (time.time() - start_time) / Time_to_check
 
 
-file = open("words.txt", 'r')
-words_list = []
-words_set = set()
-for word in file:
-    words_list.append(word)
-    words_set.add(word)
-
-print(average_runtime(words_list))
-print(average_runtime(words_set))
+if __name__ == '__main__':
+    file = open("words.txt", 'r')
+    words_list = []
+    words_set = set()
+    for word in file:
+        words_list.append(word)
+        words_set.add(word)
+    print(average_runtime(words_list))
+    print(average_runtime(words_set))
