@@ -26,5 +26,5 @@ def interleave(*integrated):
 inter_leave_list = []
 generator_leave = interleave('abc', [1, 2, 3], ('!', '@', '#'))
 for item in generator_leave:
-    inter_leave_list.append(item)
+    inter_leave_list.append(item)  # add letter to the list from the generator
 print(inter_leave_list)
