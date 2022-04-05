@@ -2,11 +2,11 @@ import time
 
 
 def average_runtime(structure):
-    time_to_check = 1000
+    Time_to_check = 1000
     start_time = time.time()
-    for i in range(time_to_check):
+    for i in range(Time_to_check):
         'zwitterion\n' in structure
-    return (time.time() - start_time) / time_to_check
+    return (time.time() - start_time) / Time_to_check
 
 
 file = open("words.txt", 'r')
