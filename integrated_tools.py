@@ -5,7 +5,7 @@ def interleave(*integrated):
         for item in integrated:
             if i >= len(item):
                 continue
-            yield item[i]
+            yield item[i]  # yield the first letter
         i += 1
 
 # interLeave without generator
