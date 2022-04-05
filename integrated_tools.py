@@ -8,6 +8,7 @@ def interleave(*integrated):
             yield item[i]  # yield the first letter
         i += 1
 
+
 # interLeave without generator
 # def interleave(*integrated):
 #     lst = []
@@ -20,11 +21,11 @@ def interleave(*integrated):
 #             lst.append(item[i])
 #         i += 1
 #     return lst
-#
 
 
-inter_leave_list = []
-generator_leave = interleave('abc', [1, 2, 3], ('!', '@', '#'))
-for item in generator_leave:
-    inter_leave_list.append(item)  # add letter to the list from the generator
-print(inter_leave_list)
+if __name__ == '__main__':
+    inter_leave_list = []
+    generator_leave = interleave('abc', [1, 2, 3], ('!', '@', '#'))
+    for item in generator_leave:
+        inter_leave_list.append(item)  # add letter to the list from the generator
+    print(inter_leave_list)
