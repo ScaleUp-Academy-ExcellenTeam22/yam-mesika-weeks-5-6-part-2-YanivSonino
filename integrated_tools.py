@@ -1,31 +1,32 @@
-def interleave(*integrated):
-    i = 0
-    maxi = len(max(integrated, key=len))
-    while i < maxi:
-        for item in integrated:
-            if i >= len(item):
+# function to interleave all the items inside a data structures from the start to end with generator
+def interleave(*data_structures_to_interweaving):
+    index = 0
+    maxi = len(max(data_structures_to_interweaving, key=len))
+    while index < maxi:
+        for data_structure in data_structures_to_interweaving:
+            if index >= len(data_structure):
                 continue
-            yield item[i]  # yield the first letter
-        i += 1
+            yield data_structure[index]  # yield the first letter
+        index += 1
 
 
-# interLeave without generator
-# def interleave(*integrated):
-#     lst = []
-#     i = 0
-#     maxi = len(max(integrated, key=len))
-#     while i < maxi:
-#         for item in integrated:
-#             if i >= len(item):
-#                 continue
-#             lst.append(item[i])
-#         i += 1
-#     return lst
+# function to interleave all the items inside a data structures from the start to end
+def interleave(*data_structures_to_interweaving):
+    interleave_list = []
+    index = 0
+    maxi = len(max(data_structures_to_interweaving, key=len))  # gets the maximum len of data structure
+    while index < maxi:
+        for data_structure in data_structures_to_interweaving:
+            if index >= len(data_structure):
+                continue
+            interleave_list.append(data_structure[index])
+        index += 1
+    return interleave_list
 
 
 if __name__ == '__main__':
-    inter_leave_list = []
+    interleave_list = []
     generator_leave = interleave('abc', [1, 2, 3], ('!', '@', '#'))
     for item in generator_leave:
-        inter_leave_list.append(item)  # add letter to the list from the generator
-    print(inter_leave_list)
+        interleave_list.append(item)  # add letter to the list from the generator
+    print(interleave_list)
