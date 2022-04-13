@@ -1,27 +1,22 @@
-from math import sqrt
+# function to find factorial of number
+def find_factorial_numbers(number_to_check):
+    for index in range(1, int((number_to_check / 2)) + 1):
+        if number_to_check % index == 0:
+            yield index
 
 
-def div(number_to_check):
-    for i in range(1, int((number_to_check / 2)) + 1):
-        if number_to_check % i == 0:
-            yield i
-
-
+# function check if the sum of the divisors are making the perfect division
 def check_for_perfection(number_to_check):
-    Sum = 0
-    generator = div(number_to_check)
-    for number in generator:
-        Sum += number
-    if Sum > number_to_check:
-        return False
-    elif Sum == number_to_check:
-        return number_to_check
+    sum_of_factors = 0
+    factors_generator = find_factorial_numbers(number_to_check)
+    for number in factors_generator:
+        sum_of_factors += number
+    return sum_of_factors == number_to_check
 
 
 if __name__ == '__main__':
-    num = 1
+    number_to_check = 1
     while 1:  # check for all numbers
-        is_perfect = check_for_perfection(num)
-        if is_perfect == num:
-            print(is_perfect)
-        num += 1
+        if check_for_perfection(number_to_check):
+            print(number_to_check)
+        number_to_check += 1 # next number
